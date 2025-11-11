@@ -1,0 +1,393 @@
+!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Futsal - El Arte de la Cancha Pequeña</title>
+    <!-- Carga de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Carga de Lucide Icons (para íconos) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Estilos personalizados para la paleta de colores y animaciones */
+        :root {
+            --color-primary: #0A1931; /* Azul Oscuro (Deportivo) */
+            --color-secondary: #E0E0E0; /* Plata/Gris Claro */
+            --color-accent: #FFD700; /* Dorado para acentos (opcional) */
+            --color-text: #FFFFFF; /* Blanco */
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--color-primary);
+            color: var(--color-text);
+            scroll-behavior: smooth;
+        }
+
+        /* Efecto de sombra para tarjetas */
+        .card-shadow {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Estilo para el encabezado animado */
+        .animated-title {
+            animation: moveTitle 5s infinite alternate;
+        }
+
+        @keyframes moveTitle {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(20px); }
+        }
+
+        /* Estilo específico para la galería de imágenes (usando la imagen cargada) */
+        .gallery-image {
+            object-fit: cover;
+            width: 100%;
+            height: 250px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .gallery-image:hover {
+            transform: scale(1.05);
+            filter: brightness(1.1);
+        }
+
+        /* Estilo para el efecto hover de los botones del menú */
+        .nav-link {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 10;
+        }
+
+        .nav-link::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1); /* Ligero brillo plateado */
+            transition: left 0.3s ease;
+            z-index: -1;
+        }
+
+        .nav-link:hover::before {
+            left: 0;
+        }
+
+        .nav-link:hover {
+            color: var(--color-accent); /* Texto dorado al hacer hover */
+        }
+    </style>
+</head>
+<body class="bg-[var(--color-primary)] text-[var(--color-text)]">
+
+    <!-- Encabezado y Navegación -->
+    <header class="sticky top-0 z-50 bg-[var(--color-primary)]/95 shadow-xl backdrop-blur-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col md:flex-row justify-between items-center">
+            <div class="flex items-center space-x-3">
+                <i data-lucide="trophy" class="w-8 h-8 text-white"></i>
+                <h1 class="text-3xl font-extrabold tracking-tight text-[var(--color-text)] animated-title">
+                    FUTSAL <span class="text-[var(--color-accent)]">GLOBAL</span>
+                </h1>
+            </div>
+
+            <!-- Menú de Navegación -->
+            <nav class="mt-4 md:mt-0">
+                <ul class="flex space-x-2 sm:space-x-6">
+                    <li><a href="#historia" class="nav-link px-3 py-2 rounded-lg font-medium text-[var(--color-secondary)] hover:text-white">Historia</a></li>
+                    <li><a href="#reglamento" class="nav-link px-3 py-2 rounded-lg font-medium text-[var(--color-secondary)] hover:text-white">Reglamento</a></li>
+                    <li><a href="#tactica" class="nav-link px-3 py-2 rounded-lg font-medium text-[var(--color-secondary)] hover:text-white">Táctica</a></li>
+                    <li><a href="#tecnica" class="nav-link px-3 py-2 rounded-lg font-medium text-[var(--color-secondary)] hover:text-white">Técnica</a></li>
+                    <li><a href="#contacto" class="nav-link px-3 py-2 rounded-lg font-medium text-[var(--color-secondary)] hover:text-white">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+
+        <!-- Sección de Videos Destacados -->
+        <section class="mb-16">
+            <h2 class="text-4xl font-bold mb-8 text-center text-[var(--color-accent)]">Videos Destacados</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Video 1: Ronaldinho -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden card-shadow p-4">
+                    <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/5U9T4oFzWbM" title="Ronaldinho Futsal Skills" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <h3 class="text-xl font-semibold mt-3 text-[var(--color-secondary)]">Ronaldinho: La magia del niño prodigio</h3>
+                </div>
+
+                <!-- Video 2: Falcão -->
+                <div class="bg-gray-800 rounded-xl overflow-hidden card-shadow p-4">
+                    <iframe class="w-full aspect-video rounded-lg" src="https://www.youtube.com/embed/x-6I31r28-A" title="Falcão - Top 30 Goals" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <h3 class="text-xl font-semibold mt-3 text-[var(--color-secondary)]">Falcão: Los 30 mejores goles de la leyenda</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contenido Principal: 4 Secciones Temáticas -->
+
+        <!-- 1. Sección Histórica -->
+        <section id="historia" class="mb-20 pt-16">
+            <h2 class="text-5xl font-extrabold mb-8 border-b-4 border-[var(--color-secondary)] pb-2">1. Perspectiva Histórica</h2>
+            <div class="bg-gray-800 p-8 rounded-2xl card-shadow">
+                <p class="text-lg leading-relaxed mb-4">El fútbol sala, conocido internacionalmente como Futsal (acrónimo de fútbol de salón), tiene sus orígenes en Uruguay en 1930 gracias al profesor Juan Carlos Ceriani. Inicialmente concebido para ofrecer a los jóvenes una alternativa al fútbol en espacios reducidos, se desarrolló rápidamente utilizando cinco jugadores por equipo. La primera reglamentación se escribió en 1933, estableciendo un campo de juego similar a una cancha de baloncesto y un balón más pesado y pequeño para reducir el rebote.</p>
+                <p class="text-lg leading-relaxed mb-4">Su expansión se consolidó en Sudamérica, llegando a Brasil, donde adquirió gran popularidad. En 1971 se fundó la Federación Internacional de Fútbol de Salón (FIFUSA) en São Paulo, organizando el primer Campeonato Mundial en 1982. Posteriormente, en 1989, la FIFA tomó el control de la organización, celebrando su primer Mundial en Países Bajos. Desde entonces, el Futsal ha evolucionado hasta convertirse en un deporte globalmente reconocido, practicado por millones y con eventos continentales y mundiales de gran prestigio.</p>
+                <div class="mt-6 p-4 bg-[var(--color-primary)] rounded-lg border border-[var(--color-accent)] flex items-center">
+                    <i data-lucide="bookmark" class="w-6 h-6 text-[var(--color-accent)] mr-3"></i>
+                    <p class="text-sm font-light italic">Dato Clave: El balón de futsal debe ser de baja retención, lo que fomenta el control de balón a ras de suelo y el juego rápido.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Sección Reglamento -->
+        <section id="reglamento" class="mb-20 pt-16">
+            <h2 class="text-5xl font-extrabold mb-8 border-b-4 border-[var(--color-secondary)] pb-2">2. Reglamento Oficial</h2>
+            <div class="bg-gray-800 p-8 rounded-2xl card-shadow">
+                <p class="text-lg leading-relaxed mb-4">El futsal se rige por las Reglas de Juego de la FIFA. El partido se divide en dos tiempos de 20 minutos netos (el reloj se detiene cada vez que el balón sale o el juego se interrumpe). Cada equipo cuenta con cinco jugadores en la cancha, incluyendo el portero, y un número ilimitado de sustituciones volantes.</p>
+                <p class="text-lg leading-relaxed mb-4">Una de las reglas más distintivas es la acumulación de faltas: a partir de la sexta falta cometida por un equipo en cada tiempo, se sanciona un tiro libre sin barrera desde el punto de doble penalti (10 metros), aumentando el componente táctico y la cautela defensiva. Además, el portero tiene restricciones para tocar el balón con las manos fuera del área y solo puede recibir el balón una vez por jugada dentro de su propio campo.</p>
+                <div class="mt-6 p-4 bg-[var(--color-primary)] rounded-lg border border-[var(--color-secondary)]">
+                    <h3 class="text-xl font-bold mb-2">Estructura del Juego</h3>
+                    <ul class="list-disc list-inside ml-4 text-sm space-y-1">
+                        <li>Duración: $2 \times 20$ minutos netos.</li>
+                        <li>Equipos: $5$ jugadores en cancha ($4$ de campo y $1$ portero).</li>
+                        <li>Sustituciones: Ilimitadas y volantes.</li>
+                        <li>Faltas Acumuladas: A partir de la $6^a$ falta, tiro libre sin barrera (doble penalti).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Sección Táctica -->
+        <section id="tactica" class="mb-20 pt-16">
+            <h2 class="text-5xl font-extrabold mb-8 border-b-4 border-[var(--color-secondary)] pb-2">3. Sistemas y Estrategias Tácticas</h2>
+            <div class="bg-gray-800 p-8 rounded-2xl card-shadow">
+                <p class="text-lg leading-relaxed mb-4">La táctica es esencial en el futsal debido a las dimensiones reducidas del campo, que exigen rotación constante, movimientos sin balón y una rápida toma de decisiones. Los sistemas de juego más comunes se definen por la disposición inicial de los cuatro jugadores de campo:</p>
+                <ul class="list-disc list-inside ml-4 text-lg space-y-2 mb-4">
+                    <li>**Sistema $4-0$ (Cuadrado o Rotación Pura):** Ofensivo, busca la superioridad numérica en cualquier sector mediante la movilidad continua de los cuatro jugadores, haciendo imposible una marca fija.</li>
+                    <li>**Sistema $3-1$ (Rombo o Diamante):** El más equilibrado. Compuesto por un cierre, dos alas y un pívot. Permite transiciones rápidas y ofrece buenas coberturas defensivas.</li>
+                    <li>**Sistema $2-2$ (Paralelo):** Divide el campo en dos líneas, ideal para equipos que buscan el juego de pases cortos y el desmarque en profundidad por las bandas.</li>
+                </ul>
+                <p class="text-lg leading-relaxed">El <span class="text-[var(--color-accent)] font-bold">Portero-Jugador</span> es la estrategia táctica cumbre, donde el portero se une al ataque para crear una superioridad numérica de $5$ contra $4$, buscando desorganizar la defensa rival, generalmente en los minutos finales o para romper una defensa muy cerrada.</p>
+                <div class="mt-6 text-center">
+                    <i data-lucide="layout-grid" class="w-12 h-12 text-[var(--color-accent)] mx-auto mb-2"></i>
+                    <p class="text-sm italic">Los sistemas $4-0$ y $3-1$ son los más utilizados por equipos de élite.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Sección Técnica -->
+        <section id="tecnica" class="mb-20 pt-16">
+            <h2 class="text-5xl font-extrabold mb-8 border-b-4 border-[var(--color-secondary)] pb-2">4. Fundamentos Técnicos</h2>
+            <div class="bg-gray-800 p-8 rounded-2xl card-shadow">
+                <p class="text-lg leading-relaxed mb-4">La técnica en futsal se enfoca en el control absoluto del balón en espacios reducidos. Los fundamentos clave son diferentes a los del fútbol de campo y requieren una precisión micrométrica.</p>
+                <h3 class="text-2xl font-semibold mt-4 mb-2 text-[var(--color-accent)]">Control del Balón y Pase</h3>
+                <p class="mb-4">El control se realiza predominantemente con la **planta del pie** (pisada), que es la técnica más efectiva para detener, orientar y proteger el balón rápidamente. Esto es vital para el juego de pared y los desmarques cortos. Los pases deben ser tensos y precisos, utilizando el interior del pie, ya que el espacio para error es mínimo.</p>
+                <h3 class="text-2xl font-semibold mt-4 mb-2 text-[var(--color-accent)]">Conducción y Regate</h3>
+                <p class="mb-4">La conducción es corta y constante, buscando siempre la línea de pase. El regate se basa en movimientos rápidos y fintas (cambio de dirección y aceleración) para superar al defensor en un espacio de pocos metros. Las fintas con la planta del pie, como la 'bicicleta' o el 'toque y arrastre', son muy efectivas.</p>
+                <div class="mt-6 p-4 bg-[var(--color-primary)] rounded-lg border border-white">
+                    <p class="text-md italic">
+                        El dominio de la <span class="font-bold">planta del pie</span> es el sello distintivo de un jugador de futsal de élite, permitiendo una velocidad de ejecución superior.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Galería de Imágenes -->
+        <section id="galeria" class="mb-20 pt-16">
+            <h2 class="text-5xl font-extrabold mb-8 text-center text-[var(--color-accent)]">Galería de Momentos</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                <!-- Imagen Subida por el Usuario -->
+                <div class="rounded-xl overflow-hidden card-shadow">
+                    <img src="image_962dbe.jpg" alt="Trofeo y balón de la Copa Mundial de Futsal de la FIFA" class="gallery-image">
+                </div>
+                <!-- Imágenes Placeholder Adicionales -->
+                <div class="rounded-xl overflow-hidden card-shadow">
+                    <img src="https://placehold.co/400x250/1F2937/FFFFFF?text=Jugada+R%C3%A1pida" alt="Jugada rápida de futsal" class="gallery-image">
+                </div>
+                <div class="rounded-xl overflow-hidden card-shadow">
+                    <img src="https://placehold.co/400x250/1F2937/FFFFFF?text=Celebraci%C3%B3n+de+Gol" alt="Celebración de gol en futsal" class="gallery-image">
+                </div>
+                <div class="rounded-xl overflow-hidden card-shadow">
+                    <img src="https://placehold.co/400x250/1F2937/FFFFFF?text=Defensa+Bloqueando" alt="Defensa bloqueando un tiro en futsal" class="gallery-image">
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección de Encuestas Interactivas -->
+        <section id="encuestas" class="mb-20 pt-16">
+            <h2 class="text-5xl font-extrabold mb-8 text-center text-[var(--color-secondary)]">Encuestas Interactivas</h2>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
+
+                <!-- Encuesta 1: Opinión General -->
+                <div class="bg-gray-800 p-8 rounded-2xl card-shadow">
+                    <h3 class="text-2xl font-bold mb-6 text-[var(--color-accent)]">¿Qué te parece el fútbol sala?</h3>
+                    <form id="form-opinion" onsubmit="handleOpinionSubmit(event)">
+                        <div class="space-y-4">
+                            <label class="flex items-center text-lg cursor-pointer">
+                                <input type="radio" name="opinion" value="Me encanta" class="form-radio h-5 w-5 text-indigo-600 rounded-full bg-gray-600 border-gray-500 mr-3" required>
+                                Me encanta
+                            </label>
+                            <label class="flex items-center text-lg cursor-pointer">
+                                <input type="radio" name="opinion" value="Es interesante" class="form-radio h-5 w-5 text-indigo-600 rounded-full bg-gray-600 border-gray-500 mr-3">
+                                Es interesante
+                            </label>
+                            <label class="flex items-center text-lg cursor-pointer">
+                                <input type="radio" name="opinion" value="No me gusta mucho" class="form-radio h-5 w-5 text-indigo-600 rounded-full bg-gray-600 border-gray-500 mr-3">
+                                No me gusta mucho
+                            </label>
+                            <label class="flex items-center text-lg cursor-pointer">
+                                <input type="radio" name="opinion" value="No lo conozco bien" class="form-radio h-5 w-5 text-indigo-600 rounded-full bg-gray-600 border-gray-500 mr-3">
+                                No lo conozco bien
+                            </label>
+                        </div>
+                        <button type="submit" class="mt-8 w-full bg-[var(--color-accent)] text-[var(--color-primary)] font-bold py-3 rounded-xl hover:opacity-90 transition duration-300 transform hover:scale-[1.01] shadow-lg">
+                            Votar
+                        </button>
+                    </form>
+                    <p id="result-opinion" class="mt-4 text-center text-sm font-light italic hidden"></p>
+                </div>
+
+                <!-- Encuesta 2: Participación Deportiva -->
+                <div class="bg-gray-800 p-8 rounded-2xl card-shadow">
+                    <h3 class="text-2xl font-bold mb-6 text-[var(--color-accent)]">Participación Deportiva UdeA</h3>
+                    <form id="form-participacion" onsubmit="handleParticipationSubmit(event)">
+                        <div class="mb-4">
+                            <label for="nombre" class="block text-sm font-medium mb-1">Nombre:</label>
+                            <input type="text" id="nombre" name="nombre" class="w-full px-4 py-2 rounded-lg bg-gray-700 border-gray-600 text-white focus:ring-[var(--color-accent)] focus:border-[var(--color-accent)]" required>
+                        </div>
+                        <div class="mb-6">
+                            <label for="carrera" class="block text-sm font-medium mb-1">Carrera:</label>
+                            <input type="text" id="carrera" name="carrera" class="w-full px-4 py-2 rounded-lg bg-gray-700 border-gray-600 text-white focus:ring-[var(--color-accent)] focus:border-[var(--color-accent)]" required>
+                        </div>
+                        <p class="text-lg font-medium mb-4">¿Te gustaría representar a tu facultad, universidad o formar parte del equipo formativo de fútbol sala?</p>
+                        <div class="space-y-4">
+                            <label class="flex items-center text-lg cursor-pointer">
+                                <input type="radio" name="interes" value="Facultad" class="form-radio h-5 w-5 text-indigo-600 rounded-full bg-gray-600 border-gray-500 mr-3" required>
+                                Sí, me gustaría representar a mi facultad
+                            </label>
+                            <label class="flex items-center text-lg cursor-pointer">
+                                <input type="radio" name="interes" value="Universidad" class="form-radio h-5 w-5 text-indigo-600 rounded-full bg-gray-600 border-gray-500 mr-3">
+                                Sí, me gustaría representar a la universidad de Antioquia
+                            </label>
+                            <label class="flex items-center text-lg cursor-pointer">
+                                <input type="radio" name="interes" value="Formativo" class="form-radio h-5 w-5 text-indigo-600 rounded-full bg-gray-600 border-gray-500 mr-3">
+                                Prefiero participar solo en formativo
+                            </label>
+                            <label class="flex items-center text-lg cursor-pointer">
+                                <input type="radio" name="interes" value="No" class="form-radio h-5 w-5 text-indigo-600 rounded-full bg-gray-600 border-gray-500 mr-3">
+                                No estoy interesado por ahora
+                            </label>
+                        </div>
+                        <button type="submit" class="mt-8 w-full bg-[var(--color-accent)] text-[var(--color-primary)] font-bold py-3 rounded-xl hover:opacity-90 transition duration-300 transform hover:scale-[1.01] shadow-lg">
+                            Enviar Solicitud
+                        </button>
+                    </form>
+                    <p id="result-participacion" class="mt-4 text-center text-sm font-light italic hidden"></p>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Sección de Contacto y Formulario -->
+        <section id="contacto" class="mb-12 pt-16">
+            <h2 class="text-5xl font-extrabold mb-8 text-center border-b-4 border-[var(--color-accent)] pb-2">Contáctanos y Sugerencias</h2>
+            <div class="bg-gray-800 p-8 rounded-2xl card-shadow max-w-2xl mx-auto">
+                <form id="form-sugerencias" onsubmit="handleContactSubmit(event)">
+                    <div class="mb-4">
+                        <label for="email" class="block text-sm font-medium mb-1">Correo Electrónico:</label>
+                        <input type="email" id="email" name="email" class="w-full px-4 py-2 rounded-lg bg-gray-700 border-gray-600 text-white focus:ring-[var(--color-accent)] focus:border-[var(--color-accent)]" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="sugerencia" class="block text-sm font-medium mb-1">Tu Sugerencia o Comentario:</label>
+                        <textarea id="sugerencia" name="sugerencia" rows="4" class="w-full px-4 py-2 rounded-lg bg-gray-700 border-gray-600 text-white focus:ring-[var(--color-accent)] focus:border-[var(--color-accent)]" required></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-[var(--color-secondary)] text-[var(--color-primary)] font-bold py-3 rounded-xl hover:bg-white transition duration-300 transform hover:scale-[1.01] shadow-lg">
+                        Enviar
+                    </button>
+                </form>
+                <div id="modal-container" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 z-50 hidden">
+                    <div class="bg-gray-900 p-8 rounded-xl max-w-sm w-full shadow-2xl border-t-4 border-[var(--color-accent)]">
+                        <p id="modal-message" class="text-lg font-semibold text-center mb-6"></p>
+                        <button onclick="closeModal()" class="w-full bg-[var(--color-accent)] text-[var(--color-primary)] font-bold py-2 rounded-lg hover:opacity-90">
+                            Aceptar
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Pie de Página -->
+    <footer class="bg-gray-900 py-6 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-gray-400">
+            &copy; 2024 Futsal Global. Proyecto de Diseño Web. Todos los derechos reservados.
+        </div>
+    </footer>
+
+    <!-- JavaScript para Encuestas y Modales -->
+    <script>
+        // Función para mostrar el modal de confirmación
+        function showModal(message) {
+            document.getElementById('modal-message').textContent = message;
+            document.getElementById('modal-container').classList.remove('hidden');
+        }
+
+        // Función para cerrar el modal
+        function closeModal() {
+            document.getElementById('modal-container').classList.add('hidden');
+        }
+
+        // Manejar el envío de la Encuesta de Opinión General
+        function handleOpinionSubmit(event) {
+            event.preventDefault();
+            const selectedOption = document.querySelector('input[name="opinion"]:checked');
+            const resultElement = document.getElementById('result-opinion');
+
+            if (selectedOption) {
+                const message = `¡Gracias por tu voto! Has seleccionado: "${selectedOption.value}". (No se guarda en la base de datos).`;
+                resultElement.textContent = message;
+                resultElement.classList.remove('hidden');
+                // Simular el reseteo del formulario para permitir otra selección si se desea
+                document.getElementById('form-opinion').reset();
+            } else {
+                showModal('Por favor, selecciona una opción para votar.');
+            }
+        }
+
+        // Manejar el envío de la Encuesta de Participación Deportiva
+        function handleParticipationSubmit(event) {
+            event.preventDefault();
+            const nombre = document.getElementById('nombre').value;
+            const carrera = document.getElementById('carrera').value;
+            const interes = document.querySelector('input[name="interes"]:checked')?.value || 'No especificado';
+            const resultElement = document.getElementById('result-participacion');
+
+            const message = `¡Solicitud recibida! ${nombre} de ${carrera} ha expresado interés en la categoría: ${interes}.`;
+            resultElement.textContent = message;
+            resultElement.classList.remove('hidden');
+            showModal('Tu solicitud de participación ha sido registrada con éxito. ¡Gracias!');
+            document.getElementById('form-participacion').reset();
+        }
+
+        // Manejar el envío del Formulario de Contacto
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const sugerencia = document.getElementById('sugerencia').value;
+
+            // En un entorno real, aquí se enviaría la data a un servidor (Firebase, etc.)
+            console.log("Contacto/Sugerencia enviada:", { email, sugerencia });
+
+            showModal('¡Sugerencia Enviada! Agradecemos tu valioso comentario. Nos pondremos en contacto pronto.');
+            document.getElementById('form-sugerencias').reset();
+        }
+
+        // Inicializar íconos de Lucide
+        lucide.createIcons();
+    </script>
+</body>
+</html>
